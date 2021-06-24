@@ -3,7 +3,7 @@ from typing import Any, Dict, List
 from category.dtos import CategoryDTO
 from category.models import Category
 from category.repositories.category import CategoryRepository
-from category.services.mptt import Tree
+from category.services.mptt import TreeService
 from category.services.utils import ChildParentService
 
 
@@ -11,7 +11,7 @@ class CategoryService:
     @staticmethod
     def create(categories: Dict[str, Any]) -> List[Category]:
         child_parent_map = ChildParentService().child_parent_map([categories])
-        category_nodes = Tree(child_parent_map).mptt([], [categories])
+        category_nodes = TreeService(child_parent_map).mptt([], [categories])
         return CategoryRepository.create(category_nodes)
 
     @staticmethod

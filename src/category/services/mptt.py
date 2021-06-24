@@ -21,10 +21,10 @@ class TreeNode:
         return f"{self.name} ({self.left}, {self.right}); parent {self.parent_name}"
 
 
-@dataclass
-class Tree:
-    child_parent_map: Dict[str, str]
-    iterator: int = 0
+class TreeService:
+    def __init__(self, child_parent_map: Dict[str, str]):
+        self.iterator: int = 0
+        self.child_parent_map = child_parent_map
 
     def _parent(self, item_name: str):
         name = self.child_parent_map.get(item_name)
