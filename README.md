@@ -39,7 +39,6 @@ You can find more information about supportable command in the `Makefile`.
 ### How to work with project
 
 1. Lock poetry dependencies:
-    - Activate virtual env
     - Change `pyproject.toml` file
     - Generate `poetry.lock` file: ```poetry lock --no-update```
 
