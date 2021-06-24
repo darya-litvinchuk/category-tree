@@ -10,6 +10,7 @@ services:
       - ./env/db.dev.env
     ports:
       - 5432:5432
+
   web:
     build:
       context: .
@@ -27,6 +28,8 @@ services:
       - ./env/app.dev.env
     depends_on:
       - db
+    environment:
+      - SECRET_KEY
 
 volumes:
   pgdata:

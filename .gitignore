@@ -19,4 +19,4 @@ build.env
 .mutmut-cache
 .coverage/
 mutmut-report.xml
-env/
+.env
