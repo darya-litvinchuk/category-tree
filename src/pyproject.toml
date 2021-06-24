@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "Category Api"
+version = "0.1.0"
+description = "App for category manipulation"
+authors = []
+
+[tool.poetry.dependencies]
+python = "~3.8.0"
+requests = "~2.25.1"
+Django = "~3.2.4"
+
+django-extensions = "~3.1.3"
+
+djangorestframework = "~3.12.4"
+djangorestframework-filters = "~0.11.1"
+djangorestframework-recursive = "~0.1.2"
+
+psycopg2-binary = "~2.8.6"
+
+gunicorn = "~20.0.4"
+
+[tool.poetry.dev-dependencies]
+mypy = "~0.902"
+flake8 = "~3.9.2"
+flake8_polyfill = "~1.0.2"
+isort = "~5.8.0"
+black = "~21.6b0"
+pytest = "~6.2.4"
+pytest-cov = "~2.12.1"
+pytest-django = "~4.4.0"
+mock = "~4.0.3"
+
+radon = "~5.0.1"
+mutmut = "~2.1.0"
+
+pip-licenses = "~3.4.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

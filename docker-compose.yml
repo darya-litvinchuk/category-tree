@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:12.3-alpine
+    volumes:
+      - ./scripts/db:/docker-entrypoint-initdb.d
+      - pgdata:/var/lib/postgresql/data
+    env_file:
+      - ./env/db.dev.env
+    ports:
+      - 5432:5432
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - INSTALL_DEV_DEPENDENCIES=true
+    ports:
+      - 8014:8014
+    volumes:
+      - ./src/category:/home/category_app/app/category
+      - ./src/CategoryWeb:/home/category_app/app/CategoryWeb
+      - ./src/tests:/home/category_app/app/tests
+    env_file:
+      - ./env/db.dev.env
+      - ./env/app.dev.env
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
