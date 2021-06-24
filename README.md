@@ -43,9 +43,7 @@ You can find more information about supportable command in the `Makefile`.
     - Change `pyproject.toml` file
     - Generate `poetry.lock` file: ```poetry lock --no-update```
 
-2. Run tests:
-    - Run application tests using `make tests`
-    - Check application test coverage using `make tests-coverage`
+2. Run tests: `make tests`
 
 3. To create migrations use `make makemigrations` command
 
@@ -63,10 +61,6 @@ You can find more information about supportable command in the `Makefile`.
     - `make format` - to format code using black and isort
     
 7. To check project source code metrics you can use [Radon](https://pypi.org/project/radon/): `make radon-check`
-
-9. To check your tests quality you can use [mutmut](https://pypi.org/project/mutmut/): 
-    - Enter `make mutmut-check`
-    - You will get a report `mutmut-report.xml` 
 
 
 ## Environment variables

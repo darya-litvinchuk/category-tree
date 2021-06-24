@@ -107,14 +107,6 @@ tests:
 	docker-compose -p test-category build
 	docker-compose -p test-category run --rm web pytest --no-cov -s || true
 	docker-compose -p test-category down -v
-
-
-.PHONY: tests-coverage
-tests-coverage:
-	@#@ Test coverage report
-	docker-compose -p test-category build
-	docker-compose -p test-category run --rm web pytest --cov-report term-missing:skip-covered || true
-	docker-compose -p test-category down -v
 	
 
 .PHONY: update
@@ -139,7 +131,7 @@ clean-cache:
 drop-db:
 	@#@ Drop database
 	docker-compose down
-	docker volume rm deps-validation_postgres
+	docker volume rm pgdata
 
 
 .PHONY: radon-check
